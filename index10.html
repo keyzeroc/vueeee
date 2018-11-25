@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>10.Observable properties</title>
+<meta charset="utf-8" />
+</head>
+<body>
+<div id="app">
+    <p>Enter Number:<input v-model="number"></p>
+    <p>{{result}}</p>
+</div>
+<script src="https://unpkg.com/vue"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data:{
+            number: '',
+            result: ''
+        },
+        watch: {
+            number: function (newNumber) {
+                if(newNumber>0){
+                    this.factorial(newNumber);
+                }
+            }
+        },
+        methods:{
+            factorial: function(newNumber){
+                this.result = 'Factorial calculation...';
+                var vm = this;
+                setTimeout(function(){
+                    var res = 1;
+                        for(var i = 1; i<=newNumber; i++){
+                            res = res * i;
+                        }
+                        vm.result = 'Factorial of ' + newNumber + ' is equal ' + res;
+                }, 2000);
+            }
+        }
+    });
+</script>
+</body>
+</html>

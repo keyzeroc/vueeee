@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>3.Data Binding</title>
+<meta charset="utf-8" />
+</head>
+<body>
+<div id="app">
+    <p>{{name}} age is {{age}}</p>
+	<p>{{age>20 ? "More than 20" : "Less than 20"}}</p>
+	<a v-bind:href="link">{{text}}</a>
+	<br>
+	</p><input type="text" v-on:input="setMessage" />
+    <p v-once>{{message}}</p>
+	<div v-html="message2"></div>
+</div>
+<script src="https://unpkg.com/vue"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+			name: 'Keyy', 
+			age: 18,
+			text: 'Google',
+			link: 'https://google.com',
+			message: 'Hello Vue!',
+			message2: '<h2>Hello</h2>'
+		},
+		methods:{
+			setMessage : function(event){
+				this.message = event.target.value;
+			}
+		}
+    });
+</script>
+</body>
+</html>

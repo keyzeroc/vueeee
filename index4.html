@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>4.Templates</title>
+<meta charset="utf-8">
+</head>
+<body>
+<div id="app"></div>
+<script src="https://unpkg.com/vue"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {name:'Keyy', age:18},
+        template: '<p>Name: {{name}}   Age: {{age}}</p>'
+    });
+</script>
+</body>
+</html>
